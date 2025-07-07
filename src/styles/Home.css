@@ -1,0 +1,204 @@
+body {
+  background: radial-gradient(circle at top left, #374d70, #000000);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.home-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.home-container {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 60px 50px;
+  width: 85%;
+  max-width: 850px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+  transform: translateY(30px);
+  opacity: 0;
+  z-index: 2;
+  position: relative;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #f9f5f5, #f6f7f9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(165, 223, 255, 0.3),
+    0 0 20px rgba(98, 168, 255, 0.2);
+}
+
+.sub-title {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.name-input {
+  padding: 12px 18px;
+  width: 70%;
+  border: 1px solid #777;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: #1c1c2b;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.name-input:focus {
+  border-color: #fbc02d;
+  box-shadow: 0 0 8px #fbc02d66;
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #4badf3, #1a5696);
+  color: white;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: initial;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(97, 65, 255, 0.4);
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(97, 65, 255, 0.4);
+}
+
+/* Decorative Images */
+/* Decorative Images */
+.corner-image {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px white);
+  animation: popIn 1.2s ease-in both;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: all 0.3s ease-in-out;
+  max-height: 90vh;
+  max-width: 45vw;
+}
+
+/* Akaza (Left image) */
+.corner-image.left {
+  top: 0%;
+  left: 0;
+  transform: translate(-15%, -50%) scale(0.8);
+  /* smaller and centered vertically */
+  max-width: 80%;
+  max-height: 80%
+}
+
+/* Tanjiro (Right image) */
+.corner-image.right {
+  bottom: 0;
+  right: 0;
+  transform: translateX(10%) scale(0.9);
+  max-width: 40%;
+  max-height: 50%
+}
+
+
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(-10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-container {
+    padding: 50px 30px;
+    width: 90%;
+  }
+
+  .corner-image {
+    max-height: 60vh;
+    max-width: 40vw;
+  }
+
+  .corner-image.left {
+    transform: translateX(-10%) scale(0.75);
+  }
+
+  .corner-image.right {
+    transform: translateX(5%) scale(0.75);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-container {
+    padding: 40px 20px;
+    width: 100%;
+  }
+
+  .corner-image {
+    max-height: 35vh;
+    max-width: 45vw;
+    opacity: 0.4;
+  }
+
+  .corner-image.left {
+    transform: translateX(-5%) scale(0.7);
+    bottom: -5px;
+  }
+
+  .corner-image.right {
+    transform: translateX(5%) scale(0.7);
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .sub-title {
+    font-size: 1rem;
+  }
+
+  .name-input {
+    width: 90%;
+  }
+}

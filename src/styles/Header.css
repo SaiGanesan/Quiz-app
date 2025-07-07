@@ -1,0 +1,41 @@
+.header-strip {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.104); /* darker semi-transparent strip */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 0; /* behind characters */
+  
+}
+.home-wrapper {
+  padding-top: 80px; /* add enough space for header height */
+}
+
+.home-wrapper {
+  overflow: visible; /* or just remove the line */
+}
+
+
+.site-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+
+  background: linear-gradient(90deg, #ff4e50, #1c8adb); /* vivid gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* Only set color to transparent if background-clip is used */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  /* Improved glow for contrast and punch */
+  text-shadow:
+    0 0 1px #ffffff,
+    0 0 6px #ff4e50aa,
+    0 0 12px #1c8adb88,
+    0 0 20px #1c8adb55;
+}
